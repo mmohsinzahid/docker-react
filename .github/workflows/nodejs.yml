@@ -17,13 +17,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      runs:
-        using: 'docker'
-        image: 'Dockerfile.dev'
     - name: yarn install, build, and test
       run: |
-        using: 
-        yarn run build
-        yarn test
+        using: 'docker'
+        image: 'Dockerfile.dev'
+        args:
+          - yarn run build
+          - yarn test
       env:
         CI: true
