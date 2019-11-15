@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: yarn install, build, and test mohsin
-      runs: |
+      runs:
         using: 'docker'
         image: 'Dockerfile.dev'
         args:
