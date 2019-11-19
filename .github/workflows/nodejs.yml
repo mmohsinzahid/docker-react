@@ -6,9 +6,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    runs:
-        using: 'docker'
-        image: 'Dockerfile.dev'
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
