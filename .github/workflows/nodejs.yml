@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v1
       - name: user node docker image
         uses: docker://node
+      - name: yarn install build and test  
         run: |
           yarn build
           yarn test
