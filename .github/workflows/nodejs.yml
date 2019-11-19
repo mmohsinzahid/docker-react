@@ -7,14 +7,12 @@ jobs:
     runs-on: [self-hosted, linux]
     steps:
     - name: yarn install, build, and test
-      uses:
-        runs:
-          using: 'docker'
-          image: 'Dockerfile'
-          run: |
-            yarn run build
-            yarn test
-      
+      run: |
+        yarn run build
+        yarn test
+      env:
+        CI: true
+
   my-job:
     name: My Job
     runs-on: ubuntu-latest
