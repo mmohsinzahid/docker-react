@@ -11,9 +11,9 @@ jobs:
         runs:
           using: 'docker'
           image: 'Dockerfile'
-      run: |
-        yarn run build
-        yarn test
+          run: |
+            yarn run build
+            yarn test
       
   my-job:
     name: My Job
