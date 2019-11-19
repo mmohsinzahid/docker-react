@@ -3,16 +3,21 @@ name: Node CI First Test
 on: [push]
 
 jobs:
-  build:
-    runs-on: [self-hosted, linux]
-    steps:
-    - name: yarn install, build, and test
-      run: |
-        yarn run build
-        yarn test
-      env:
-        CI: true
-
+  name: 'Hello World'
+  description: 'Greet someone and record the time'
+  inputs:
+    who-to-greet:  # id of input
+      description: 'Who to greet'
+      required: true
+      default: 'World'
+  outputs:
+    time: # id of output
+      description: 'The time we greeted you'
+  runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+      - ${{ inputs.who-to-greet }}
   my-job:
     name: My Job
     runs-on: ubuntu-latest
