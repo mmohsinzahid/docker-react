@@ -13,6 +13,7 @@ jobs:
         uses: docker://node
       - name: yarn install build and test  
         run: |
+          yarn install
           yarn build
           yarn test
 
