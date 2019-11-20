@@ -16,4 +16,4 @@ jobs:
           yarn install
           yarn build
       - name: yarn test    
-        run: yarn test
+        run: yarn test:nowatch
