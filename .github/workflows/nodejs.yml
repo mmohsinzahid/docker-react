@@ -12,9 +12,7 @@ jobs:
       - name: user node docker image
         uses: docker://node
       - name: yarn install and start
-        run: |
-          yarn install
-          yarn start
+        run: yarn install
       - name: yarn test    
         run: yarn test
 
