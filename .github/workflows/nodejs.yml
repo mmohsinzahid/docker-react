@@ -12,6 +12,8 @@ jobs:
       - name: user node docker image
         uses: docker://node
       - name: yarn install and start
-        run: yarn build
+        run: | 
+          yarn install
+          yarn build
       - name: yarn test    
         run: yarn test
